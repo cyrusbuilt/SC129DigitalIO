@@ -19,7 +19,7 @@ sc129tst.c is a commind line test program for the SC129 that was intended to run
 make all
 ```
 
-This will produce and executable called SC129TST.COM. You can then trasfer this to your RC2014 (or compatible Z80/Z180) system and run it. The test program operates on the assumption that you tie each of the output pins to their corresponding input pins (I used jumper shunts). When the program runs, it outputs values 0 - 255 to the output port then reads the value back from the input port and compares the value to see if they match. Once it has processed all 255 values, then the program terminates. You will see both the input and output LEDs on the board flashing as the values are processed.
+This will produce an executable called SC129TST.COM. You can then trasfer this to your RC2014 (or compatible Z80/Z180) system and run it. The test program operates on the assumption that you tie each of the output pins to their corresponding input pins (I used jumper shunts). When the program runs, it outputs values 0 - 255 to the output port then reads the value back from the input port and compares the value to see if they match. Once it has processed all 255 values, then the program terminates. You will see both the input and output LEDs on the board flashing as the values are processed.
 
 ## Usage
 Simply include the SC129.h and SC2129.c files in your project then add then following where needed:
