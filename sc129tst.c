@@ -23,7 +23,7 @@ void main() {
 	SC129_setAddress(SC129_DEFAULT_ADDRESS);  // Change this to match the address the jumpers are set for.
 	
 	int val = 0;
-	for (int i = 0; i < 255; i++) {
+	for (int i = 0; i < 256; i++) {
 		SC129_write(i);
 		msleep(500);
 		val = SC129_read();
