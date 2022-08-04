@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "sc129.h"
 
 int _address = SC129_DEFAULT_ADDRESS;
