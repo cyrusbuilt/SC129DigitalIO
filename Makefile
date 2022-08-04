@@ -1,5 +1,5 @@
 CC := zcc
-CFLAGS := +cpm -lm -create-app
+CFLAGS := +cpm --list -m -create-app
 SOURCES := sc129tst.c sc129.c
 
 all: sc129tst.com
