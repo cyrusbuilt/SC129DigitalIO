@@ -1,10 +1,11 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "sc129.h"
 
-int _address = SC129_DEFAULT_ADDRESS;
+static unsigned int _address = SC129_DEFAULT_ADDRESS;
 
-bool SC129_setAddress(int address) {
-	if (address >= 0 && address <= 255) {
+bool __LIB__ SC129_setAddress(unsigned int address) __z88dk_fastcall {
+	if (address < 256) {
 		_address = address;
 		return true;
 	}
@@ -12,8 +13,8 @@ bool SC129_setAddress(int address) {
 	return false;
 }
 
-bool SC129_write(int value) {
-	if (value >= 0 && value <= 255) {
+bool __LIB__ SC129_write(unsigned int value) __z88dk_fastcall {
+	if (value < 256) {
 		outp(_address, value);
 		return true;
 	}
@@ -21,6 +22,6 @@ bool SC129_write(int value) {
 	return false;
 }
 
-int SC129_read() {
+unsigned int __LIB__ SC129_read(void) __z88dk_fastcall {
 	return inp(_address);
 }
