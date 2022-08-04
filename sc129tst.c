@@ -13,6 +13,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#pragma printf = "%s %3d"               /* enables %s %d only */
+
 void main() {
 	printf("\n\nSC129 Test v1.0 by Cyrus Brunner\n\n");
 	printf("Make sure each output pin of the SC129 is connected to it's\n");
@@ -22,12 +24,12 @@ void main() {
 	sleep(1);
 	SC129_setAddress(SC129_DEFAULT_ADDRESS);  // Change this to match the address the jumpers are set for.
 	
-	int val = 0;
-	for (int i = 0; i < 256; i++) {
+	unsigned int val = 0;
+	for (unsigned int i = 0; i < 256; i++) {
 		SC129_write(i);
 		msleep(500);
 		val = SC129_read();
-		printf("Output = %d, Input = %d - ", i, val);
+		printf("Output = %3d, Input = %3d - ", i, val);
 		if (val != i) {
 			printf("ERROR Value mismatch!\n");
 		}
