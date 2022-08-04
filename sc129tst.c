@@ -21,13 +21,13 @@ void main() {
 	printf("corresponding input pin and then press any key to continue...\n");
 	fgetc_cons();
 	printf("Beginning SC129 test (values 0 - 255)...\n\n");
-	sleep(1);
+	sleep(1*18432000/4000000); // * default scz180 CPU Hz / default CPM CPU Hz
 	SC129_setAddress(SC129_DEFAULT_ADDRESS);  // Change this to match the address the jumpers are set for.
 	
 	unsigned int val = 0;
 	for (unsigned int i = 0; i < 256; i++) {
 		SC129_write(i);
-		msleep(500);
+		msleep(500*18432000/4000000); // * default scz180 CPU Hz / default CPM CPU Hz
 		val = SC129_read();
 		printf("Output = %3d, Input = %3d - ", i, val);
 		if (val != i) {
