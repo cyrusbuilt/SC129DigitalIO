@@ -24,19 +24,25 @@
  * @param address The address to set (0 - 255).
  * @returns true if valid address set; Otherwise, false.
  */
-extern bool __LIB__ SC129_setAddress(unsigned int address) __z88dk_fastcall;
+extern bool __LIB__ SC129_setAddress(unsigned int address) __smallc;
+extern bool __LIB__ SC129_setAddress_fastcall(unsigned int address) __smallc __z88dk_fastcall;
+#define SC129_setAddress SC129_setAddress_fastcall
 
 /**
  * Writes a value to the output port of the Digital I/O module.
  * @param value The value to write (0 - 255);
  * @returns true if a valid value was written; Otherwise, false.
  */
-extern bool __LIB__ SC129_write(unsigned int value) __z88dk_fastcall;
+extern bool __LIB__ SC129_write(unsigned int value) __smallc;
+extern bool __LIB__ SC129_write_fastcall(unsigned int value) __smallc __z88dk_fastcall;
+#define SC129_write SC129_write_fastcall
 
 /**
  * Reads a value from the input port of the Digital I/O module.
  * @returns an 8bit value read from the port (0 - 255);
  */
-extern unsigned int __LIB__ SC129_read(void) __z88dk_fastcall;
+extern unsigned int __LIB__ SC129_read(void) __smallc;
+extern unsigned int __LIB__ SC129_read_fastcall(void) __smallc __z88dk_fastcall;
+#define SC129_read SC129_read_fastcall
 
 #endif
