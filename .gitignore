@@ -57,3 +57,9 @@ dkms.conf
 # Compiled CPM binaries
 *.com
 *.COM
+
+# Assembly listings
+*.lis
+
+# macOS crap
+.DS_Store
